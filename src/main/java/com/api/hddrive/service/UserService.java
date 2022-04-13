@@ -1,4 +1,6 @@
 package com.api.hddrive.service;
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import com.api.hddrive.entity.User;
@@ -14,7 +16,14 @@ public interface UserService {
 	
 	public void deleteById(Long id);
 	
-	public Optional<User> findByEmailAndPassword(String email, String nom_usr);
+	public Optional<User> findByEmailAndUserName(String email, String nomUsr);
 	
-
+	public List<User> findByEmailAndPassword();
+	
+	public String hashPassword(String password);
+	
+	public boolean verifyHash(String password, String hash);
+	
+	public Map<String, String> getMapOfParameters(String... params);
+	
 }
